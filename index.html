@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ApexMotors | Veículos de Alta Performance</title>
+  
+  <!-- Fontes Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome (Ícones) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Arquivo de Estilos Externo -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVEGAÇÃO -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-car-side logo-icon"></i>
+        <span>APEX<span class="logo-accent">MOTORS</span></span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#destaques">Destaques</a>
+        <a href="#estoque">Estoque</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#simulador">Financiamento</a>
+      </div>
+
+      <div class="nav-actions">
+        <!-- BOTÃO ALTERNADOR DE TEMA (DARK / LIGHT) -->
+        <button id="themeToggle" class="theme-btn" aria-label="Alternar tema">
+          <i class="fa-solid fa-moon icon-dark"></i>
+          <i class="fa-solid fa-sun icon-light"></i>
+          <span class="theme-text">Modo Claro</span>
+        </button>
+
+        <a href="#contato" class="btn btn-primary nav-cta">Fale Conosco</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <span class="badge">Performance & Luxo Sem Limites</span>
+      <h1>Sinta a Adrenalina em <br><span class="gradient-text">Cada Quilômetro</span></h1>
+      <p>A maior seleção de supercarros, esportivos e sedãs executivos revisados com garantia de fábrica. Encontre sua próxima máquina hoje mesmo.</p>
+
+      <div class="hero-buttons">
+        <a href="#estoque" class="btn btn-primary btn-lg">
+          Ver Estoque <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#simulador" class="btn btn-outline btn-lg">
+          Simular Financiamento
+        </a>
+      </div>
+
+      <!-- Métricas / Estatísticas -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">+1.200</div>
+          <div class="stat-label">Carros Entregues</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Laudo Cautelar Aprovado</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">15 Anos</div>
+          <div class="stat-label">De Tradição e Confiança</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CATÁLOGO / ESTOQUE -->
+  <section id="estoque" class="section">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2>Nosso Estoque <span class="accent-text">Exclusivo</span></h2>
+          <p>Modelos selecionados a dedo com procedência e garantia total.</p>
+        </div>
+        
+        <!-- Filtros de Categoria -->
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="todos">Todos</button>
+          <button class="filter-btn" data-filter="esportivo">Esportivos</button>
+          <button class="filter-btn" data-filter="suv">SUVs Luxo</button>
+          <button class="filter-btn" data-filter="eletrico">Elétricos</button>
+        </div>
+      </div>
+
+      <!-- Grid de Veículos -->
+      <div class="cars-grid" id="carsGrid">
+        
+        <!-- Carro 1 -->
+        <article class="car-card" data-category="esportivo">
+          <div class="car-img-wrapper">
+            <span class="car-tag">Destaque</span>
+            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80" alt="Porsche 911 GT3">
+          </div>
+          <div class="car-content">
+            <span class="car-brand">Porsche</span>
+            <h3 class="car-title">911 GT3 RS 4.0</h3>
+            <div class="car-specs">
+              <span><i class="fa-solid fa-gauge-high"></i> 2023</span>
+              <span><i class="fa-solid fa-road"></i> 4.200 km</span>
+              <span><i class="fa-solid fa-bolt"></i> 525 cv</span>
+            </div>
+            <div class="car-footer">
+              <div class="car-price">
+                <span class="price-label">Valor</span>
+                <span class="price-value">R$ 1.850.000</span>
+              </div>
+              <button class="btn btn-secondary btn-sm" onclick="openModal('Porsche 911 GT3 RS')">Tenho Interesse</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Carro 2 -->
+        <article class="car-card" data-category="eletrico">
+          <div class="car-img-wrapper">
+            <span class="car-tag tag-green">100% Elétrico</span>
+            <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=80" alt="Tesla Model S">
+          </div>
+          <div class="car-content">
+            <span class="car-brand">Tesla</span>
+            <h3 class="car-title">Model S Plaid</h3>
+            <div class="car-specs">
+              <span><i class="fa-solid fa-gauge-high"></i> 2024</span>
+              <span><i class="fa-solid fa-road"></i> 0 km</span>
+              <span><i class="fa-solid fa-bolt"></i> 1.020 cv</span>
+            </div>
+            <div class="car-footer">
+              <div class="car-price">
+                <span class="price-label">Valor</span>
+                <span class="price-value">R$ 1.120.000</span>
+              </div>
+              <button class="btn btn-secondary btn-sm" onclick="openModal('Tesla Model S Plaid')">Tenho Interesse</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Carro 3 -->
+        <article class="car-card" data-category="suv">
+          <div class="car-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=80" alt="Range Rover Sport">
+          </div>
+          <div class="car-content">
+            <span class="car-brand">Land Rover</span>
+            <h3 class="car-title">Range Rover Sport SVR</h3>
+            <div class="car-specs">
+              <span><i class="fa-solid fa-gauge-high"></i> 2022</span>
+              <span><i class="fa-solid fa-road"></i> 18.500 km</span>
+              <span><i class="fa-solid fa-bolt"></i> 575 cv</span>
+            </div>
+            <div class="car-footer">
+              <div class="car-price">
+                <span class="price-label">Valor</span>
+                <span class="price-value">R$ 890.000</span>
+              </div>
+              <button class="btn btn-secondary btn-sm" onclick="openModal('Range Rover Sport SVR')">Tenho Interesse</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Carro 4 -->
+        <article class="car-card" data-category="esportivo">
+          <div class="car-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" alt="BMW M4 Competition">
+          </div>
+          <div class="car-content">
+            <span class="car-brand">BMW</span>
+            <h3 class="car-title">M4 Competition Coupe</h3>
+            <div class="car-specs">
+              <span><i class="fa-solid fa-gauge-high"></i> 2023</span>
+              <span><i class="fa-solid fa-road"></i> 8.000 km</span>
+              <span><i class="fa-solid fa-bolt"></i> 510 cv</span>
+            </div>
+            <div class="car-footer">
+              <div class="car-price">
+                <span class="price-label">Valor</span>
+                <span class="price-value">R$ 740.000</span>
+              </div>
+              <button class="btn btn-secondary btn-sm" onclick="openModal('BMW M4 Competition')">Tenho Interesse</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Carro 5 -->
+        <article class="car-card" data-category="suv">
+          <div class="car-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80" alt="Audi RS Q8">
+          </div>
+          <div class="car-content">
+            <span class="car-brand">Audi</span>
+            <h3 class="car-title">RS Q8 4.0 V8 Turbo</h3>
+            <div class="car-specs">
+              <span><i class="fa-solid fa-gauge-high"></i> 2023</span>
+              <span><i class="fa-solid fa-road"></i> 11.200 km</span>
+              <span><i class="fa-solid fa-bolt"></i> 600 cv</span>
+            </div>
+            <div class="car-footer">
+              <div class="car-price">
+                <span class="price-label">Valor</span>
+                <span class="price-value">R$ 1.050.000</span>
+              </div>
+              <button class="btn btn-secondary btn-sm" onclick="openModal('Audi RS Q8')">Tenho Interesse</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Carro 6 -->
+        <article class="car-card" data-category="eletrico">
+          <div class="car-img-wrapper">
+            <span class="car-tag tag-green">100% Elétrico</span>
+            <img src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&w=800&q=80" alt="Porsche Taycan">
+          </div>
+          <div class="car-content">
+            <span class="car-brand">Porsche</span>
+            <h3 class="car-title">Taycan Turbo S</h3>
+            <div class="car-specs">
+              <span><i class="fa-solid fa-gauge-high"></i> 2022</span>
+              <span><i class="fa-solid fa-road"></i> 14.000 km</span>
+              <span><i class="fa-solid fa-bolt"></i> 761 cv</span>
+            </div>
+            <div class="car-footer">
+              <div class="car-price">
+                <span class="price-label">Valor</span>
+                <span class="price-value">R$ 980.000</span>
+              </div>
+              <button class="btn btn-secondary btn-sm" onclick="openModal('Porsche Taycan Turbo S')">Tenho Interesse</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMULADOR DE FINANCIAMENTO -->
+  <section id="simulador" class="section bg-surface">
+    <div class="container">
+      <div class="simulador-grid">
+        <div class="simulador-info">
+          <h2>Simule o Financiamento do seu <span class="accent-text">Próximo Carro</span></h2>
+          <p>Condições especiais com taxas de juros reduzidas através dos maiores bancos parceiros.</p>
+
+          <ul class="features-list">
+            <li><i class="fa-solid fa-circle-check"></i> Aprovação rápida e simplificada</li>
+            <li><i class="fa-solid fa-circle-check"></i> Entrada facilitada em até 12x</li>
+            <li><i class="fa-solid fa-circle-check"></i> Aceitamos seu usado na troca com excelente avaliação</li>
+          </ul>
+        </div>
+
+        <div class="simulador-card">
+          <h3>Calculadora de Parcelas</h3>
+          
+          <div class="form-group">
+            <label for="carValue">Valor do Veículo (R$):</label>
+            <input type="number" id="carValue" value="300000" step="10000">
+          </div>
+
+          <div class="form-group">
+            <label for="entryValue">Valor da Entrada (R$):</label>
+            <input type="number" id="entryValue" value="60000" step="5000">
+          </div>
+
+          <div class="form-group">
+            <label for="installments">Número de Parcelas:</label>
+            <select id="installments">
+              <option value="12">12x</option>
+              <option value="24">24x</option>
+              <option value="36" selected>36x</option>
+              <option value="48">48x</option>
+              <option value="60">60x</option>
+            </select>
+          </div>
+
+          <div class="calc-result">
+            <div class="result-label">Estimativa da Parcela Mensal:</div>
+            <div class="result-value" id="installmentResult">R$ 8.950,00</div>
+            <small>*Taxa estimada de 1,49% a.m. Sujeita à análise de crédito.</small>
+          </div>
+
+          <button class="btn btn-primary btn-full" onclick="openModal('Simulação de Financiamento')">Solicitar Proposta Real</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#" class="logo">
+          <i class="fa-solid fa-car-side logo-icon"></i>
+          <span>APEX<span class="logo-accent">MOTORS</span></span>
+        </a>
+        <p class="footer-desc">Referência em compra, venda e consignação de automóveis de alto padrão e exóticos.</p>
+      </div>
+
+      <div>
+        <h4>Links Rápidos</h4>
+        <ul class="footer-links">
+          <li><a href="#destaques">Home</a></li>
+          <li><a href="#estoque">Nosso Estoque</a></li>
+          <li><a href="#simulador">Financiamento</a></li>
+          <li><a href="#">Sobre Nós</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contato</h4>
+        <ul class="footer-contact">
+          <li><i class="fa-solid fa-location-dot"></i> Av. das Américas, 5000 - Rio de Janeiro</li>
+          <li><i class="fa-solid fa-phone"></i> (21) 99999-8888</li>
+          <li><i class="fa-solid fa-envelope"></i> contato@apexmotors.com.br</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 ApexMotors. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL DE INTERESSE -->
+  <div class="modal-overlay" id="contactModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <h3 id="modalTitle">Tenho Interesse</h3>
+      <p>Preencha seus dados para receber o contato exclusivo de um especialista.</p>
+
+      <form id="contactForm" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label for="name">Nome Completo</label>
+          <input type="text" id="name" required placeholder="Seu nome">
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefone / WhatsApp</label>
+          <input type="tel" id="phone" required placeholder="(00) 00000-0000">
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" required placeholder="seu@email.com">
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Enviar Proposta</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Arquivo de Script Externo -->
+  <script src="script.js"></script>
+</body>
+</html>
